@@ -20,6 +20,7 @@ public class NetworkHandling {
         CHANNEL.registerPacket(NetworkDirection.CLIENT_TO_SERVER, FlagUrlPacket.ID, FlagUrlPacket.HANDLER, FlagUrlPacket.class);
         CHANNEL.registerPacket(NetworkDirection.CLIENT_TO_SERVER, NotifyRecipeTransferPacket.ID, NotifyRecipeTransferPacket.HANDLER, NotifyRecipeTransferPacket.class);
         CHANNEL.registerPacket(NetworkDirection.CLIENT_TO_SERVER, RequestPlanetDataPacket.ID, RequestPlanetDataPacket.HANDLER, RequestPlanetDataPacket.class);
+        CHANNEL.registerPacket(NetworkDirection.CLIENT_TO_SERVER, JetSuitFlightEnabledPacket.ID, JetSuitFlightEnabledPacket.HANDLER, JetSuitFlightEnabledPacket.class);
 
         CHANNEL.registerPacket(NetworkDirection.SERVER_TO_CLIENT, StartRocketPacket.ID, StartRocketPacket.HANDLER, StartRocketPacket.class);
         CHANNEL.registerPacket(NetworkDirection.SERVER_TO_CLIENT, MachineInfoPacket.ID, MachineInfoPacket.HANDLER, MachineInfoPacket.class);

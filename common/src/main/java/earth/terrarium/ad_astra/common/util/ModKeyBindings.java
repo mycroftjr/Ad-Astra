@@ -23,6 +23,11 @@ public class ModKeyBindings {
     private boolean clickingBack;
     private boolean clickingLeft;
     private boolean clickingRight;
+    private boolean suitFlightEnabled;
+
+    public ModKeyBindings() {
+        suitFlightEnabled = true;
+    }
 
     public static boolean jumpKeyDown(Player player) {
         return player.level.isClientSide ? getClientKeyPressed(player, KeybindPacket.Keybind.JUMP) : getServerKeyPressed(player, KeybindPacket.Keybind.JUMP);
@@ -46,6 +51,14 @@ public class ModKeyBindings {
 
     public static boolean rightKeyDown(Player player) {
         return player.level.isClientSide ? getClientKeyPressed(player, KeybindPacket.Keybind.RIGHT) : getServerKeyPressed(player, KeybindPacket.Keybind.RIGHT);
+    }
+
+    public static boolean suitFlightEnabled(Player player) {
+        return PLAYER_KEYS.getOrDefault(player.getUUID(), new ModKeyBindings()).suitFlightEnabled;
+    }
+
+    public static void setSuitFlightEnabled(Player player, boolean enabled) {
+        PLAYER_KEYS.getOrDefault(player.getUUID(), new ModKeyBindings()).suitFlightEnabled = enabled;
     }
 
     private static boolean getServerKeyPressed(Player player, KeybindPacket.Keybind key) {

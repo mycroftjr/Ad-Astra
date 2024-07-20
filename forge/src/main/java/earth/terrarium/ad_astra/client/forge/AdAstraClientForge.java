@@ -62,6 +62,7 @@ public class AdAstraClientForge {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(AdAstraClientForge::modelLoading);
         bus.addListener(AdAstraClientForge::spriteLoading);
+        bus.addListener(AdAstraClientForge::onRegisterKeyBindings);
         bus.addListener(AdAstraClientForge::onRegisterParticles);
         bus.addListener(AdAstraClientForge::chestSpriteLoading);
         bus.addListener(AdAstraClientForge::onRegisterLayerDefinitions);
@@ -78,6 +79,10 @@ public class AdAstraClientForge {
         AdAstraClient.onRegisterFluidRenderTypes(AdAstraClientForge::onRegisterFluidRenderTypes);
         AdAstraClient.onRegisterBlockRenderTypes(AdAstraClientForge::onRegisterBlockRenderTypes);
         hasInitializedRenderers = true;
+    }
+
+    public static void onRegisterKeyBindings(RegisterKeyMappingsEvent event) {
+        event.register(AdAstraClient.KEY_TOGGLE_SUIT_FLIGHT);
     }
 
     public static void onClientTick(TickEvent.ClientTickEvent event) {

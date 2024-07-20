@@ -7,6 +7,7 @@ import earth.terrarium.ad_astra.client.registry.ClientModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.model.ModelLoadingRegistry;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
@@ -41,6 +42,7 @@ public class AdAstraClientFabric implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         AdAstraClient.init();
+        KeyBindingHelper.registerKeyBinding(AdAstraClient.KEY_TOGGLE_SUIT_FLIGHT);
         ClientSpriteRegistryCallback.event(Sheets.CHEST_SHEET).register((spriteAtlasTexture, registry) -> AdAstraClient.onRegisterChestSprites(registry::register));
         ClientSpriteRegistryCallback.event(InventoryMenu.BLOCK_ATLAS).register((spriteAtlasTexture, registry) -> AdAstraClient.onRegisterSprites(registry::register));
         ModelLoadingRegistry.INSTANCE.registerModelProvider((manager, out) -> AdAstraClient.onRegisterModels(out));

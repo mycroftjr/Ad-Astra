@@ -1,3 +1,4 @@
+- Add Jet Suit toggle
 - Fix not being able to place water on hot planets even when inside an oxygen distributor bubble
 - Add config option to disable custom first person hand (#300)
 - Add Lunarian Trade Recipes (#234)

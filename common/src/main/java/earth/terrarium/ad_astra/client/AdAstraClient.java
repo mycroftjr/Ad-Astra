@@ -1,5 +1,6 @@
 package earth.terrarium.ad_astra.client;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import earth.terrarium.ad_astra.AdAstra;
@@ -20,6 +21,7 @@ import earth.terrarium.ad_astra.client.renderer.entity.vehicle.rocket.tier_4.Roc
 import earth.terrarium.ad_astra.client.renderer.entity.vehicle.rover.RoverItemRenderer;
 import earth.terrarium.ad_astra.client.resourcepack.*;
 import earth.terrarium.ad_astra.client.screen.PlayerOverlayScreen;
+import earth.terrarium.ad_astra.common.constants.ConstantComponents;
 import earth.terrarium.ad_astra.common.registry.ModBlockEntityTypes;
 import earth.terrarium.ad_astra.common.registry.ModBlocks;
 import earth.terrarium.ad_astra.common.registry.ModFluids;
@@ -27,6 +29,7 @@ import earth.terrarium.ad_astra.common.registry.ModItems;
 import earth.terrarium.botarium.client.ClientHooks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
@@ -62,6 +65,11 @@ public class AdAstraClient {
     public static List<PlanetSkyRenderer> skyRenderers = new ArrayList<>();
     public static List<PlanetRing> planetRings = new ArrayList<>();
     public static List<Galaxy> galaxies = new ArrayList<>();
+
+    public static final KeyMapping KEY_TOGGLE_SUIT_FLIGHT = new KeyMapping(
+            ConstantComponents.TOGGLE_SUIT_FLIGHT_KEY.getString(),
+            InputConstants.KEY_V,
+            ConstantComponents.AD_ASTRA_CATEGORY.getString());
 
     public static void init() {
         ClientModScreens.init();

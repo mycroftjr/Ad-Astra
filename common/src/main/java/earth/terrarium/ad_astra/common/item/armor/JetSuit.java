@@ -93,7 +93,7 @@ public class JetSuit extends NetheriteSpaceSuit implements EnergyItem {
 
     public void fly(Player player, ItemStack stack) {
         emitParticles = false;
-        if (!SpaceSuitConfig.enableJetSuitFlight) {
+        if (!SpaceSuitConfig.enableJetSuitFlight || !ModKeyBindings.suitFlightEnabled(player)) {
             return;
         }
 

@@ -1,6 +1,7 @@
 package earth.terrarium.ad_astra.datagen.provider.client;
 
 import earth.terrarium.ad_astra.AdAstra;
+import earth.terrarium.ad_astra.common.constants.ConstantComponents;
 import earth.terrarium.ad_astra.common.registry.ModBlocks;
 import earth.terrarium.ad_astra.common.registry.ModEntityTypes;
 import earth.terrarium.ad_astra.common.registry.ModItems;
@@ -83,6 +84,13 @@ public class ModLangProvider extends LanguageProvider {
         add("death.attack.oxygen.player", "%1$s couldn't breathe anymore");
         add("death.attack.rocket_flames", "%1$s melted under an active rocket");
         add("death.attack.rocket_flames.player", "%1$s melted under an active rocket");
+
+        add(ConstantComponents.TOGGLE_SUIT_FLIGHT_KEY.getString(), "Toggle suit flight");
+        add(ConstantComponents.AD_ASTRA_CATEGORY.getString(), "Ad Astra");
+
+        add(ConstantComponents.SUIT_FLIGHT_ENABLED.getString(), "Suit flight enabled");
+        add(ConstantComponents.SUIT_FLIGHT_DISABLED.getString(), "Suit flight disabled");
+
         add("emi.category.ad_astra.coal_generator", "Coal Generator");
         add("emi.category.ad_astra.compressor", "Compressor");
         add("emi.category.ad_astra.cryo_freezer_conversion", "Cryo Freezer Conversion");
